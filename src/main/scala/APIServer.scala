@@ -24,8 +24,8 @@ object APIServer extends StreamApp[IO] {
     //implicit def gameEncoder: EntityEncoder[IO, models.Game] = ???
     val driver = "com.mysql.jdbc.Driver"
     val url = "jdbc:mysql://localhost:3306"
-    val username = "root"
-    val password = "herewegoagain"
+    val username = args(0)
+    val password = args(1)
     val client = new MySqlClient(url, username, password)
 
     val gameService = HttpService[IO] {

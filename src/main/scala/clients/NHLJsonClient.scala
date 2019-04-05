@@ -51,7 +51,7 @@ object NHLJsonClient extends App {
                            )
 
   override def main(args: Array[String]): Unit = {
-    val nhlClient = new NHLJsonClient
+    val nhlClient = new NHLJsonClient(args(0), args(1))
     val currentPlayers = nhlClient.getCurrentPlayers
 
     nhlClient.getTeamStandings.map(io => io
@@ -72,11 +72,9 @@ object NHLJsonClient extends App {
 
 }
 
-class NHLJsonClient {
+class NHLJsonClient(username: String, password: String) {
   val driver = "com.mysql.jdbc.Driver"
   val url = "jdbc:mysql://localhost:3306"
-  val username = "root"
-  val password = "herewegoagain"
   val client = new MySqlClient(url, username, password)
 
   val httpClient: Client[IO] = Http1Client[IO]().unsafeRunSync
