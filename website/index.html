@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"> 
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        <script src="scripts/script.js"></script>
+        <title>NHL 2019 Season Statistics</title>
+    </head>
+    <body>
+        <div>
+            <div>
+                <img src="images/1920px-05_NHL_Shield.png" alt="NHL logo" height="100">
+            </div>
+            
+        
+        <label for="games">Games:</label>
+        <div id="games">
+            <div id="game">
+                <table id="game_table"><tr></tr></table>
+            </div>
+        </div>
+        <label for="standings">Standings:</label>
+            <div id="standings">
+                <h3>Atlantic</h3>
+                <table id="atlantic_standings_table" title="Atlantic">
+                    <thead>
+                    <tr>
+                        <th>Season</th>
+                        <th>Team</th>
+                        <th>Games Played</th>
+                        <th>Wins</th>
+                        <th>Losses</th>
+                        <th>OT</th>
+                        <th>Points</th>
+                        <th>Goals For</th>
+                        <th>Goals Against</th>
+                        <th>Goal Differential</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <h3>Metropolitan</h3>
+                <table id="metropolitan_standings_table" title="Metropolitan">
+                    <thead>
+                    <tr>
+                        <th>Season</th>
+                        <th>Team</th>
+                        <th>Games Played</th>
+                        <th>Wins</th>
+                        <th>Losses</th>
+                        <th>OT</th>
+                        <th>Points</th>
+                        <th>Goals For</th>
+                        <th>Goals Against</th>
+                        <th>Goal Differential</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <h3>Central</h3>
+                <table id="central_standings_table" title="Central">
+                    <thead>
+                    <tr>
+                        <th>Season</th>
+                        <th>Team</th>
+                        <th>Games Played</th>
+                        <th>Wins</th>
+                        <th>Losses</th>
+                        <th>OT</th>
+                        <th>Points</th>
+                        <th>Goals For</th>
+                        <th>Goals Against</th>
+                        <th>Goal Differential</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <h3>Pacific</h3>
+                <table id="pacific_standings_table" title="Pacific">
+                    <thead>
+                    <tr>
+                        <th>Season</th>
+                        <th>Team</th>
+                        <th>Games Played</th>
+                        <th>Wins</th>
+                        <th>Losses</th>
+                        <th>OT</th>
+                        <th>Points</th>
+                        <th>Goals For</th>
+                        <th>Goals Against</th>
+                        <th>Goal Differential</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        <div>
+        </div>
+        </div>
+         
+        <!--script>
+        $("#games").load("http://localhost:8080/games/1")
+        </script-->
+        
+        <div id="add_game_div"> <label for="add_game_form">Add a game: </label>
+        <form action="/games" method="post" id="add_game_form">
+            <div>
+                <label for="game_year">Year of Game:</label>
+                <input type="text" id="game_year" name="year">
+            </div>
+            <div>
+                <label for="game_date">Date of Game (MM-DD-YYYY):</label>
+                <input type="text" id="game_date" name="date">
+            </div>
+            <div>
+                <label for="game_time">Time of Game:</label>
+                <input type="text" id="game_time" name="time">
+            </div>
+            <div>
+                <label for="home_team_id">Home Team:</label>
+                <input type="text" id="home_team_id" name="homeTeamName">
+            </div>
+            <div>
+                <label for="away_team_id">Visiting Team:</label>
+                <input type="text" id="away_team_id" name="awayTeamName">
+            </div>
+            <div>
+            <button type="submit">Add Game</button>
+            </div>
+        </form>
+        </div>
+        <div id="add_goal_div">
+            <label for="add_goal_form">Add a Goal:</label>
+            <form action="goals" method="post" id="add_goal_form">
+                <div>
+                    <label for="game_id">Game ID:</label>
+                    <input type="text" id="game_id" name="gameId">
+                </div>
+                <div>
+                    <label for="scoring_team_name">Scoring Team ID:</label>
+                    <input type="text" id="scoring_team_name" name="scoringTeamName">
+                </div>
+                <div>
+                    <label for="period_of_goal">Period of Goal:</label>
+                    <input type="text" id="period_of_goal" name="periodOfGoal">
+                </div>
+                <div>
+                    <label for="time_of_goal">Time of Goal:</label>
+                    <input type="text" id="time_of_goal" name="timeOfGoal">
+                </div>
+                <div>
+                    <label for="goal_scorer">Goal Scorer:</label>
+                    <input type="text" id="goal_scorer" name="goalScorer">
+                </div>
+                <div>
+                    <label for="assist_one">Assist One:</label>
+                    <input type="text" id="assist_one" name="assistOne">
+                </div>
+                <div>
+                    <label for="assist_two">Assist Two:</label>
+                    <input type="text" id="assist_two" name="assistTwo">
+                </div>
+                <div>
+                    <button type="submit">Add Goal</button>
+                </div>
+            </form>
+        </div>
+        <div>
+            <label for="end_game_form">Game Over:</label>
+            <form action="games" method="put" id="end_game_form">
+                <div>
+                    <label for="game_id">Game ID:</label>
+                    <input type="text" id="end_game_id" name="gameId">
+                </div>
+                <div>
+                    <label for="game_id">Went to Overtime?</label>
+                    <input type="text" id="went_to_overtime" name="wasOvertimeGame">
+                </div>
+                <div><button type="submit">End Game</button></div>
+            </form>
+        </div>
+        <div>
+            <label for="end_game_form">Game Over:</label>
+            <form action="games" method="get" id="get_active_games_form">
+                <div><button type="submit">Get Active Games</button></div>
+            </form>
+        </div>
+        <div>
+            <label for="remove_chiclets_form">Game Over:</label>
+            <form action="games" method="get" id="remove_chiclets_form">
+                <div><button type="submit">Remove Inactive Chiclets</button></div>
+            </form>
+        </div>
+    </body>
+</html>
