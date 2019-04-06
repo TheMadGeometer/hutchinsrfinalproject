@@ -1,11 +1,11 @@
-#README
+# README
 
 step-by-step instructions for initializing and running the NHL statistics website. 
 There are two options for running the application. If you’re using a Mac, you can use either option, otherwise you must 
 use option two. In either case, you will need the following software, and you will need to ensure that it can be called 
 from your command line.
 
-##Option 1
+## Option 1
 
 1. Git – if you do not have git installed on your machine, please follow the instructions here. The code for the 
 application is stored in a public Git repository, and you will need git to download it. 
@@ -42,7 +42,7 @@ NOTE: that each time you run this script, when you terminate it, you will have t
 best way to do this is to go to the command line and type `ps`, get the pid number for the APIServer process, and then 
 type `kill <pid>`, where you type the pid number you just got instead of <pid>.
 
-##Option 2: Run the application using java:
+## Option 2: Run the application using java:
 
 sbt gives you the capability to compile the source code in the repository into one large file called an assembly jar. To
 run the application like this you will need JDK 1.8 installed on your machine. If you need to download the JDK, go here.
