@@ -5,8 +5,6 @@ There are two options for running the application. If you’re using a Mac, you 
 use option two. In either case, you will need the following software, and you will need to ensure that it can be called 
 from your command line.
 
-##Option 1
-
 1. Git – if you do not have git installed on your machine, please follow the instructions here. The code for the 
 application is stored in a public Git repository, and you will need git to download it. 
 
@@ -24,7 +22,23 @@ the source code.
 6. Finally, the application is going to run an API server that is currently configured to run on port 8080, so it assumes
 there is nothing bound to that port already. 
 
-Option 1: Run the Bash scripts on your Mac, if you have one:
+Once the above setup and configuration is complete, it’s time to clone the repository. If you are configured for ssh, 
+open a terminal, go to the folder where you want the code to live, and enter this command:
+
+`git clone git@github.com:TheMadGeometer/hutchinsrfinalproject.git`
+
+If you are using https, which is the default configuration for GitHub, enter this command:
+
+`git clone https://github.com/TheMadGeometer/hutchinsrfinalproject.git`
+
+Once the repository is cloned, go into the top-level folder of the repository and find the finalProjectBackEndScript.sql file. 
+Go into that file and scroll down to the very end to the line that says:
+
+`ALTER USER 'xxxxxxx'@'localhost' IDENTIFIED WITH mysql_native_password BY 'xxxxxxxx';`
+
+Edit the sequences of x’s to be whatever your MySQL login username and password are, respectively. 
+
+## Option 1: Run the Bash scripts on your Mac, if you have one:
 
 When you first download the repository, navigate to the root directory of the project, and run:
 

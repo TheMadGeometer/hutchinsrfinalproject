@@ -3,3 +3,5 @@ example.txt
 project/project
 project/target
 .idea
+*.zip
+.DS_Store

@@ -267,4 +267,4 @@ DELIMITER ;
 
 CALL make_team_seasons_for_year("2018-2019");
 
-ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'herewegoagain';
+ALTER USER 'root'@'xxxxxxx' IDENTIFIED WITH mysql_native_password BY 'xxxxxxx';
