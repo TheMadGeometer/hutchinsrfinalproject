@@ -84,6 +84,7 @@ Open a new terminal window and navigate to the top-level directory of the git re
 following command:
 
 (Mac or Linux): `open -a "Google Chrome" ./website/index.html`
+
 (Windows): `start chrome ./website/index.html`
 
 This command should open Google Chrome and display the web page. This webpage should include standings for each team in 
